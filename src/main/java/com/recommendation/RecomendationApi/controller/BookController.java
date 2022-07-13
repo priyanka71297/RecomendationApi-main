@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 //import com.recommendation.RecomendationApi.dto.BookDTO;
 import com.recommendation.RecomendationApi.model.Book;
-import com.recommendation.RecomendationApi.service.BookService;
+import com.recommendation.RecomendationApi.service.BookServiceImpl;
 
 @RestController
 @RequestMapping(value = { "/user", "/admin" })
 public class BookController {
 
 	@Autowired
-	BookService bookservice;
+	BookServiceImpl bookservice;
 
 	@GetMapping("/get-all-books")
 	public List<Book> getBooks() {

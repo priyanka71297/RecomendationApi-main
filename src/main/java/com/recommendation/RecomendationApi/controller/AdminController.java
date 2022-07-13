@@ -27,7 +27,7 @@ import com.recommendation.RecomendationApi.model.Author;
 import com.recommendation.RecomendationApi.model.Book;
 import com.recommendation.RecomendationApi.model.Category;
 import com.recommendation.RecomendationApi.service.AuthorService;
-import com.recommendation.RecomendationApi.service.BookService;
+import com.recommendation.RecomendationApi.service.BookServiceImpl;
 import com.recommendation.RecomendationApi.service.CategoryService;
 
 @RestController
@@ -38,7 +38,7 @@ public class AdminController {
 	// Use ResponseEntity to all the methods in controller classes.
 
 	@Autowired
-	private BookService bookService;
+	private BookServiceImpl bookService;
 	
 	@Autowired(required = false)
 	private AuthorService authorService;

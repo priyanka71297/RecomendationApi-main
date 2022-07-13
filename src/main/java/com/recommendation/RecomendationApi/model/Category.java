@@ -59,9 +59,5 @@ public class Category{
 	@Override
 	public String toString() {
 		return "Category [categoryId=" + categoryId + ", category=" + category + ", books=" + books + "]";
-	}
-	
-	
-	
-	
+	}	
 }
