@@ -16,4 +16,10 @@ public class AuthorServiceImpl implements AuthorService{
 		return authorRepo.save(author);
 	}
 
+	@Override
+	public Author getAuthorById(int authorid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
