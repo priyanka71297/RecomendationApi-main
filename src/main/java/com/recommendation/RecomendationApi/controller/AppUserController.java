@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.recommendation.RecomendationApi.model.AppUser;
 import com.recommendation.RecomendationApi.service.AppUserService;
 
@@ -27,7 +26,7 @@ public class AppUserController {
 
 		private final Logger LOG = LoggerFactory.getLogger(this.getClass());
 
-		@Autowired
+		@Autowired(required=false)
 		AppUserService appUserService;
 
 		@GetMapping("/get-all-users")
@@ -39,7 +38,7 @@ public class AppUserController {
 		@PostMapping("/sign-up")
 		public ResponseEntity<AppUser> signUp(@RequestBody AppUser appUser) {
 			LOG.info(appUser.toString());
-			return new ResponseEntity<AppUser>(appUserService.signupUser(appUser), HttpStatus.CREATED);
+			return new ResponseEntity<AppUser>(appUserService.signUpUser(appUser), HttpStatus.CREATED);
 		}
 
 		@PostMapping("/sign-in")
@@ -47,7 +46,7 @@ public class AppUserController {
 			LOG.info(appUser.toString());
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("message", "User " + appUser.getUserName() + " signed in successfully.");
-			return new ResponseEntity<AppUser>(appUserService.signupUser(appUser), headers, HttpStatus.OK);
+			return new ResponseEntity<AppUser>(appUserService.signUpUser(appUser), headers, HttpStatus.OK);
 		}
 
 		@PutMapping("/update-user")
